@@ -16,7 +16,8 @@ class TableForm extends React.Component {
     const { values, handleChange } = this.props;
     return (
 
-            <div className='Container'>
+            <div className='container'>
+            <h2> Step 2: Select The Teppan Table Size</h2>
             <input
               placeholder="Enter The Table Size"
               label="First Name"

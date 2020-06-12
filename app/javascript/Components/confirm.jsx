@@ -18,8 +18,8 @@ class Confirm extends React.Component {
       values: { date, table, feast }
     } = this.props;
     return (
-      <div>
-      Please confirm your choices
+      <div className="container">
+      <h2>Step 4: Please Confirm Your Choices</h2>
         <p> {date} </p>
         <p> {table} </p>
         <p> {feast} </p>

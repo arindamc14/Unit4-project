@@ -16,7 +16,8 @@ class FeastForm extends React.Component {
     const { values, handleChange } = this.props;
     return (
 
-            <div className='Container'>
+            <div className='container'>
+            <h2> Step 3: Select The Feast</h2>
             <input
               placeholder="Enter The Feast"
               label="Feast"

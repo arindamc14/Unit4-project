@@ -34,8 +34,8 @@ class Form extends React.Component {
   // Handle fields change
   handleChange = input => e => {
     console.log(e)
-    
-    this.setState({ [input]: startDate});
+    console.log(this.state)
+    // this.setState({ [input]: e.target.value });
   };
 
   render() {
@@ -48,7 +48,7 @@ class Form extends React.Component {
         return (
           <DateForm
             nextStep={this.nextStep}
-            handleChange={this.handleChange}
+            handleChange={this.handleChange()}
             values={values}
           />
         );
