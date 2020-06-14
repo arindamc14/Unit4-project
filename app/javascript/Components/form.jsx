@@ -8,37 +8,52 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 class Form extends React.Component {
-  state = {
-    step: 1,
-    startDate: new Date(),
-    table: '',
-    feast: ''
-  };
+
+  constructor(){
+    super();
+    this.state = {
+      step: 1,
+      startDate: new Date(),
+      table: '',
+      feast: ''
+    };
+  }
 
   // Proceed to next step
   nextStep = () => {
-    const { step } = this.state;
     this.setState({
-      step: step + 1
+      step: this.state.step + 1
     });
   };
 
   // Go back to prev step
   prevStep = () => {
-    const { step } = this.state;
     this.setState({
-      step: step - 1
+      step: this.state.step - 1
     });
   };
 
   // Handle fields change
-  handleChange = input => e => {
-    console.log(e)
-    console.log(this.state)
-    // this.setState({ [input]: e.target.value });
+  handleChangeDate = input => {
+    this.setState({
+      startDate: input
+    })
+  };
+
+  handleChangeTable = input => {
+    this.setState({
+      table: input
+    })
+  };
+
+  handleChangeFeast = input => {
+    this.setState({
+      feast: input
+    })
   };
 
   render() {
+    console.log(this.state)
     const { step } = this.state;
     const { startDate, table, feast } = this.state;
     const values = { startDate, table, feast };
@@ -48,8 +63,8 @@ class Form extends React.Component {
         return (
           <DateForm
             nextStep={this.nextStep}
-            handleChange={this.handleChange()}
-            values={values}
+            handleChangeDate={this.handleChangeDate}
+            startDate={this.state.startDate}
           />
         );
       case 2:
@@ -57,8 +72,8 @@ class Form extends React.Component {
           <TableForm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
+            handleChangeTable={this.handleChangeTable}
+            table={this.state.table}
           />
         );
       case 3:
@@ -66,8 +81,8 @@ class Form extends React.Component {
           <FeastForm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
+            handleChangeFeast={this.handleChangeFeast}
+            feast={feast}
           />
         );
       case 4:

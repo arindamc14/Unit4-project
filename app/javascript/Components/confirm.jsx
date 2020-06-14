@@ -13,16 +13,15 @@ class Confirm extends React.Component {
   };
 
   render() {
-    console.log('IN CONFIRMATION', this.props)
-    const {
-      values: { date, table, feast }
-    } = this.props;
+
+    const date = this.props.values.startDate.toString();
+
     return (
       <div className="container">
       <h2>Step 4: Please Confirm Your Choices</h2>
         <p> {date} </p>
-        <p> {table} </p>
-        <p> {feast} </p>
+        <p> {this.props.values.table} </p>
+        <p> {this.props.values.feast} </p>
         <br/>
         <button onClick={this.back}>Back</button>
         <button onClick={this.continue}>Confirm your order</button>

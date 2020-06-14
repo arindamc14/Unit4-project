@@ -1,42 +1,53 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker"; 
 import "react-datepicker/dist/react-datepicker.css";
+import Button from 'react-bootstrap/Button';
 
 
 
 class DateForm extends React.Component {
-  state = {
-    startDate: new Date()
-  };
+  constructor(){
+    super();
+
+    this.state = {
+      startDate: new Date()
+    };
+  }
 
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
   };
 
-  handleChange = date => {
-    // e.preventDefault();
+  handleChangeDate = date => {
+    // date.preventDefault();
     this.setState({
       startDate: date     
     });
-    this.props.handleChange(this.state.startDate);
+    this.props.handleChangeDate(date);
   };
 
   render() {
+
     const { values, handleChange } = this.props;
+    
     return (
 
             <div className="container">
             <h2> Step 1: Select The Date</h2>
+            <br />
             <DatePicker
-            selected={this.state.startDate}
-            onChange={handleChange('date')}
+            selected={this.props.startDate}
+            onChange={this.handleChangeDate}
+            defaultValue={this.state.startDate}
+            minDate={new Date()}
+            dateFormat="d MMMM, yyyy"
             />
 
-            <br />
-            <button
+            <br /> <br />
+            <Button variant="secondary"
               onClick={this.continue}
-            >Continue</button>
+            >Continue</Button>
 
             </div>
 
