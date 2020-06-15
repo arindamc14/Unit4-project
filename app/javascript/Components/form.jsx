@@ -15,7 +15,7 @@ class Form extends React.Component {
       step: 1,
       startDate: new Date(),
       table: '',
-      feast: ''
+      menu: []
     };
   }
 
@@ -45,18 +45,19 @@ class Form extends React.Component {
       table: input
     })
   };
-
-  handleChangeFeast = input => {
-    this.setState({
-      feast: input
+  //handle feast changes
+  updateArray  = input => {
+    console.log("parent form component for menu",input)
+    this.setState ({
+      menu: input
     })
-  };
+  }
 
   render() {
     console.log(this.state)
     const { step } = this.state;
-    const { startDate, table, feast } = this.state;
-    const values = { startDate, table, feast };
+    const { startDate, table, menu } = this.state;
+    const values = { startDate, table, menu };
 
     switch (step) {
       case 1:
@@ -81,8 +82,7 @@ class Form extends React.Component {
           <FeastForm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            handleChangeFeast={this.handleChangeFeast}
-            feast={feast}
+            updateArray={this.updateArray}
           />
         );
       case 4:

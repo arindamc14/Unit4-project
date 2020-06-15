@@ -115,7 +115,6 @@ class Menu extends React.Component {
   }
 
   render() {
-    console.log('STATE!!!!', this.state.menu)
     const items = this.state.menu.map(item => {
       return <div className="row border border-primary rounded" 
                   style={{backgroundColor: '#cac5c5', margin: '15px 2px', height:'60px', padding: '5px 5px'}}

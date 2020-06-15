@@ -29,7 +29,9 @@ class FeastForm extends React.Component {
       menu: array
     })
     this.calculatePrice (array);
+    this.props.updateArray(array);
   }
+  
   calculatePrice (array) {
     console.log("inside calculatePrice")
     
@@ -43,13 +45,12 @@ class FeastForm extends React.Component {
     this.setState ({
       totalPrice: totalPricing
     })
-    console.log("TOTAL PRICE!!!!!!!!!!!", totalPricing)
   }
 
  
 
   render() {
-    console.log("this state in feast parent", this.state)
+        console.log("this state in form parent", this.state)
     const { values, handleChange } = this.props;
     return (
 
