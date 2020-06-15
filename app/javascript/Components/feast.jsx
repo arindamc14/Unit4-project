@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import Basket from './basket';
+import Menu from './menu';
+import Button from 'react-bootstrap/Button';
 
 
 class FeastForm extends React.Component {
   constructor() {
     super ();
     this.state = {
-      feast: 0
+      menu: [],
+      totalPrice: 0
     };
 }
 
@@ -19,35 +23,62 @@ class FeastForm extends React.Component {
     this.props.prevStep();
   };
 
-  handleChangeFeast = feast => {
-    // e.preventDefault();
-    this.setState({
-      feast: feast.target.value     
-    });
-    this.props.handleChangeFeast(feast.target.value);
-  };
+  updateArray (array) {
+    console.log(array)
+    this.setState ({
+      menu: array
+    })
+    this.calculatePrice (array);
+  }
+  calculatePrice (array) {
+    console.log("inside calculatePrice")
+    
+    var anotherArray = array;
+    var totalPricing = 0;
+    // console.log("ANOTHER ARRRAY", anotherArray)
+
+    for (var i=0; i<anotherArray.length; i++) {
+      totalPricing = totalPricing + anotherArray[i].priceForCalculation * anotherArray[i].count;
+    }
+    this.setState ({
+      totalPrice: totalPricing
+    })
+    console.log("TOTAL PRICE!!!!!!!!!!!", totalPricing)
+  }
+
+ 
 
   render() {
+    console.log("this state in feast parent", this.state)
     const { values, handleChange } = this.props;
     return (
 
             <div className='container'>
             <h2> Step 3: Select The Feast</h2>
-            <br />
-            <input
-              placeholder="Enter The Feast"
-              label="Feast"
-              onChange={this.handleChangeFeast}
-              // defaultValue={values.feast}
-            />
-            <br />
-            <button
-              onClick={this.back}
-            >Back</button>
-            <button
-              onClick={this.continue}
-            >Continue</button>
+              <hr/>
+              <br />
+            <div className="row">  
+            <div className='col-8 border'>              
+            <Menu updateArray={(s)=>{this.updateArray(s)}}/> 
+              
             </div>
+            
+            <div className='col-4'>
+            <Basket menu={this.state.menu}
+                    totalPrice={this.state.totalPrice}/>
+            </div>
+            </div>
+
+            <br /> <br />
+            <Button variant="dark" style={{margin: '0px 10px '}}
+              onClick={this.back}
+            >Back</Button>
+            <Button variant="dark" style={{margin: '0px 20px '}}
+              onClick={this.continue}
+            >Continue</Button>
+            <br /> <br /> <br /> <br />
+
+          </div>
 
     );
   }

@@ -36,6 +36,7 @@ class TableForm extends React.Component {
 
             <div className='container' >
             <h2> Step 2: Select The Teppan Table Size</h2>
+            <hr/>
             <br />
             
               <Card style={{backgroundColor: '#cac5c5', width: '18rem' }}>

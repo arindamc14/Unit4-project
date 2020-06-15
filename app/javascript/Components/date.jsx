@@ -35,6 +35,7 @@ class DateForm extends React.Component {
 
             <div className="container">
             <h2> Step 1: Select The Date</h2>
+            <hr/>
             <br />
             <DatePicker
             selected={this.props.startDate}
@@ -45,7 +46,7 @@ class DateForm extends React.Component {
             />
 
             <br /> <br />
-            <Button variant="secondary"
+            <Button variant="dark" style={{margin: '10px 10px '}}
               onClick={this.continue}
             >Continue</Button>
 
