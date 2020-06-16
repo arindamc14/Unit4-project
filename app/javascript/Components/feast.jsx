@@ -45,6 +45,7 @@ class FeastForm extends React.Component {
     this.setState ({
       totalPrice: totalPricing
     })
+    this.props.totalFoodPrice(totalPricing);
   }
 
  

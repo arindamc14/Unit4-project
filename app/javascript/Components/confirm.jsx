@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 
 
 class Confirm extends React.Component {
-  continue = e => {
+  postOrder = e => {
     e.preventDefault();
-    this.props.nextStep();
+    this.props.postOrder();
   };
 
   back = e => {
@@ -15,7 +15,7 @@ class Confirm extends React.Component {
 
   render() {
     console.log("CONFIRMATIONNN!!!!!!!#####$$%%%%%")
-    console.log(this.props)
+    console.log(this.props.values)
     const date = this.props.values.startDate.toString();
 
     const cart = this.props.values.menu.map((element)=> {
@@ -38,18 +38,20 @@ class Confirm extends React.Component {
              key="bookingDate" 
              style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
              {date} </div>
-             Booking Table Option: 
+             Booking Table Option: (Cost: ${this.props.values.tableCost})
         <div className="row rounded" 
              key="tableOption" 
              style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
              {this.props.values.table} </div>
-        <div> Ordered Food Items: {cart} </div>
+        <div> Ordered Food Items: (Cost: ${this.props.values.foodCost}) {cart} </div>
+        <br />
+        Total Cost: ${this.props.values.totalCost}
         <br /> <br />
             <Button variant="dark" style={{margin: '0px 10px '}}
               onClick={this.back}
             >Back</Button>
             <Button variant="dark" style={{margin: '0px 20px '}}
-              onClick={this.continue}
+              onClick={this.postOrder}
             >Confrirm Order</Button>
             <br /> <br /> <br /> <br />
         </div>

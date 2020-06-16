@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sliced_lamb: 1
+  tiger_prawns: 1
+  dory_fish: 1
+  baby_kailan: 1
+  mixed_vegetables: 1
+  sliced_chicken: 1
+  kagoshima_japanese_wagyu_sirloin_steak: 1
+  lobster_red_wine_sauce_and_yuzu_kosho: 1
+  iberico_pork_pluma: 1
+  japanese_steamed_rice: 1
+  table: 1
+  user: one
+
+two:
+  sliced_lamb: 1
+  tiger_prawns: 1
+  dory_fish: 1
+  baby_kailan: 1
+  mixed_vegetables: 1
+  sliced_chicken: 1
+  kagoshima_japanese_wagyu_sirloin_steak: 1
+  lobster_red_wine_sauce_and_yuzu_kosho: 1
+  iberico_pork_pluma: 1
+  japanese_steamed_rice: 1
+  table: 1
+  user: two

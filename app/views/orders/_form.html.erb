@@ -1,0 +1,77 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sliced_lamb %>
+    <%= form.number_field :sliced_lamb %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tiger_prawns %>
+    <%= form.number_field :tiger_prawns %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dory_fish %>
+    <%= form.number_field :dory_fish %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baby_kailan %>
+    <%= form.number_field :baby_kailan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mixed_vegetables %>
+    <%= form.number_field :mixed_vegetables %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sliced_chicken %>
+    <%= form.number_field :sliced_chicken %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kagoshima_japanese_wagyu_sirloin_steak %>
+    <%= form.number_field :kagoshima_japanese_wagyu_sirloin_steak %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lobster_red_wine_sauce_and_yuzu_kosho %>
+    <%= form.number_field :lobster_red_wine_sauce_and_yuzu_kosho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iberico_pork_pluma %>
+    <%= form.number_field :iberico_pork_pluma %>
+  </div>
+
+  <div class="field">
+    <%= form.label :japanese_steamed_rice %>
+    <%= form.number_field :japanese_steamed_rice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :table %>
+    <%= form.number_field :table %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

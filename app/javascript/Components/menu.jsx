@@ -18,6 +18,7 @@ class Menu extends React.Component {
     .then((response) => {
 
       const data = response.data
+      console.log("Data from axios get request: *********************", data)
 
       this.setState({ menu: data })
 

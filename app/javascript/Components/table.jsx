@@ -43,7 +43,8 @@ class TableForm extends React.Component {
               <Card.Body>
                 <Card.Title>Option 1</Card.Title>
                 <Card.Text>
-                  Caters to 1-4 persons
+                  <a>Caters to 1-4 persons</a><br/>
+                  <a>Price: $50</a>
                 </Card.Text>
                 <Button onClick={()=>{this.handleChangeTable(1)}}
                   variant="secondary">Select</Button>
@@ -54,7 +55,8 @@ class TableForm extends React.Component {
               <Card.Body>
                 <Card.Title>Option 2</Card.Title>
                 <Card.Text>
-                  Caters to 5-10 persons
+                  <a>Caters to 5-10 persons</a><br/>
+                  <a>Price: $100</a>
                 </Card.Text>
                 <Button onClick={()=>{this.handleChangeTable(2)}}
                 variant="secondary">Select</Button>
@@ -65,7 +67,8 @@ class TableForm extends React.Component {
               <Card.Body>
                 <Card.Title>Option 3</Card.Title>
                 <Card.Text>
-                  Caters to 10-15 persons
+                  <a>Caters to 10-15 persons</a><br/>
+                  <a>Price: $150</a>
                 </Card.Text>
                 <Button onClick={()=>{this.handleChangeTable(3)}}
                 variant="secondary">Select</Button>

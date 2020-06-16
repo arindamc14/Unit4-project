@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_084022) do
+ActiveRecord::Schema.define(version: 2020_06_16_163905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 2020_06_16_084022) do
     t.integer "count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "sliced_lamb"
+    t.integer "tiger_prawns"
+    t.integer "dory_fish"
+    t.integer "baby_kailan"
+    t.integer "mixed_vegetables"
+    t.integer "sliced_chicken"
+    t.integer "kagoshima_japanese_wagyu_sirloin_steak"
+    t.integer "lobster_red_wine_sauce_and_yuzu_kosho"
+    t.integer "iberico_pork_pluma"
+    t.integer "japanese_steamed_rice"
+    t.integer "table"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +57,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_084022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "users"
 end
