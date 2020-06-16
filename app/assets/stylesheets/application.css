@@ -1,1 +1,13 @@
+/*
+ *= require partials/variables
+ *= require partials/typography
+ *= require partials/elements
+
+ *= require vendor/grid
+ *= require vendor/mixins
+
+ *= require pages/home
+ *= require pages/listing
+ *= require pages/detail
+ */
 @import "bootstrap";
