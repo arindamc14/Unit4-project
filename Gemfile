@@ -16,7 +16,7 @@ gem 'webpacker', '~> 4.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
