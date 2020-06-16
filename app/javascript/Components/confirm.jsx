@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 
 class Confirm extends React.Component {
@@ -32,12 +33,23 @@ class Confirm extends React.Component {
     return (
       <div className="container">
       <h2>Step 4: Please Confirm Your Choices</h2> <hr/>
-        <div className="row rounded" key="bookingDate" style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> Booking Date: {date} </div>
-        <div className="row rounded" key="tableOption" style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> Booking Table Option: {this.props.values.table} </div>
+        <div className="row rounded" 
+             key="bookingDate" 
+             style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
+             Booking Date: {date} </div>
+        <div className="row rounded" 
+             key="tableOption" 
+             style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
+             Booking Table Option: {this.props.values.table} </div>
         <p> Ordered Food Items: {cart} </p>
-        <br/>
-        <button onClick={this.back}>Back</button>
-        <button onClick={this.continue}>Confirm your order</button>
+        <br /> <br />
+            <Button variant="dark" style={{margin: '0px 10px '}}
+              onClick={this.back}
+            >Back</Button>
+            <Button variant="dark" style={{margin: '0px 20px '}}
+              onClick={this.continue}
+            >Continue</Button>
+            <br /> <br /> <br /> <br />
         </div>
     );
   }
