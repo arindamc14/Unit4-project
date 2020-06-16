@@ -33,22 +33,24 @@ class Confirm extends React.Component {
     return (
       <div className="container">
       <h2>Step 4: Please Confirm Your Choices</h2> <hr/>
+        Booking Date: 
         <div className="row rounded" 
              key="bookingDate" 
              style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
-             Booking Date: {date} </div>
+             {date} </div>
+             Booking Table Option: 
         <div className="row rounded" 
              key="tableOption" 
              style={{backgroundColor: '#a9a0a0', padding:'10px 10px', height: '50px', width: '700px', margin: '20px 0'}}> 
-             Booking Table Option: {this.props.values.table} </div>
-        <p> Ordered Food Items: {cart} </p>
+             {this.props.values.table} </div>
+        <div> Ordered Food Items: {cart} </div>
         <br /> <br />
             <Button variant="dark" style={{margin: '0px 10px '}}
               onClick={this.back}
             >Back</Button>
             <Button variant="dark" style={{margin: '0px 20px '}}
               onClick={this.continue}
-            >Continue</Button>
+            >Confrirm Order</Button>
             <br /> <br /> <br /> <br />
         </div>
     );

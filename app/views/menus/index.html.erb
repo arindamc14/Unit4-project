@@ -1,0 +1,27 @@
+<div class="container">
+
+<h2>Menu</h2> <hr/>
+
+<table style="background-color: #a2a2a2">
+  <thead>
+    <tr>
+      <th style="width:85%">Item</th>
+      <th>Price</th>
+
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.item %></td>
+        <td><%= menu.price %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>

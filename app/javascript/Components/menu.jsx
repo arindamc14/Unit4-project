@@ -1,83 +1,31 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 class Menu extends React.Component {
 
   constructor() {
     super ();
     this.state = {
-      menu: [{
-        id: 1,
-        item: "Sliced Lamb",
-        price: " -$15/100g",
-        priceForCalculation: 15,
-        count: 0
-      },
-      {
-        id: 2,
-        item: "Tiger Prawns",
-        price: " -$16/100g",
-        priceForCalculation: 10,
-        count: 0
-      },
-      {
-        id: 3,
-        item: "Dory Fish",
-        price: " -$8/100g",
-        priceForCalculation: 8,
-        count: 0
-      },
-      {
-        id: 4,
-        item: "Baby Kailan",
-        price: " -$10/100g",
-        priceForCalculation: 10,
-        count: 0
-      },
-      {
-        id: 5,
-        item: "Mixed Vegetables",
-        price: " -$5/100g",
-        priceForCalculation: 5,
-        count: 0
-      },
-      {
-        id: 6,
-        item: "Sliced Chicken",
-        price: " -$12/100g",
-        priceForCalculation: 10,
-        count: 0
-      },
-      {
-        id: 7,
-        item: "Kagoshima Japanese Wagyu Sirloin Steak",
-        price: " -$138/100g",
-        priceForCalculation: 138,
-        count: 0
-      },
-      {
-        id: 8,
-        item: "Lobster, Red Wine Sauce and Yuzu Kosho",
-        price: " -$128/100g",
-        priceForCalculation: 128,
-        count: 0
-      },
-      {
-        id: 9,
-        item: "Iberico Pork “Pluma”",
-        price: " -$50/100g",
-        priceForCalculation: 50,
-        count: 0
-      },
-      {
-        id: 10,
-        item: "Japanese Steamed Rice",
-        price: " -$2/bowl",
-        priceForCalculation: 2,
-        count: 0
-      }]
+      menu: []
     };
 }
+  componentDidMount(){
+    console.log("inside get MENU!!@@#$#$#%^^$%$%$%")
+    const url = '../menus.json';
+
+    axios.get(url)
+    .then((response) => {
+
+      const data = response.data
+
+      this.setState({ menu: data })
+
+    }).catch((error)=>{
+      console.log(error);
+    })
+}
+
   addToCart (item) {
     let index = item.id - 1;
 

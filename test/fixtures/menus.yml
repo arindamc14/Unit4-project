@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  price: MyString
+  priceForCalulation: 1
+  count: 1
+
+two:
+  item: MyString
+  price: MyString
+  priceForCalulation: 1
+  count: 1

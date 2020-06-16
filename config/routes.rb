@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   devise_for :users, controllers: { profiles: "profiles" }
   root 'teppanyaki#index'
   get '/form', to: 'teppanyaki#form', as: 'form'

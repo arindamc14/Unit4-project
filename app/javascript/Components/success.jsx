@@ -6,8 +6,8 @@ class Success extends React.Component {
   render() {
 
     return (
-      <div>
-      Success!
+      <div className="container">
+      Success! You will receive a confimation email shortly.
       </div>
     );
   }
